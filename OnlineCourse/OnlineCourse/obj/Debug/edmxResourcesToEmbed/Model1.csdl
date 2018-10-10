@@ -1,0 +1,524 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dersportalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admini">
+    <Key>
+      <PropertyRef Name="Aid" />
+    </Key>
+    <Property Name="Aid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Aadi" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Asoyadi" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Amaili" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Asifre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Aonay" Type="Boolean" />
+    <Property Name="Kid" Type="Int32" />
+    <Property Name="Eid" Type="Int32" />
+    <NavigationProperty Name="Egitmen" Relationship="Self.FK__Admini__Eid__5DCAEF64" FromRole="Admini" ToRole="Egitmen" />
+    <NavigationProperty Name="Kullanici" Relationship="Self.FK__Admini__Kid__5CD6CB2B" FromRole="Admini" ToRole="Kullanici" />
+  </EntityType>
+  <EntityType Name="Bildirimler">
+    <Key>
+      <PropertyRef Name="Bid" />
+    </Key>
+    <Property Name="Bid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Badi" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Bicerik" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Eid" Type="Int32" />
+    <Property Name="Kid" Type="Int32" />
+    <NavigationProperty Name="Egitmen" Relationship="Self.FK__Bildirimler__Eid__440B1D61" FromRole="Bildirimler" ToRole="Egitmen" />
+    <NavigationProperty Name="Kullanici" Relationship="Self.FK__Bildirimler__Kid__44FF419A" FromRole="Bildirimler" ToRole="Kullanici" />
+  </EntityType>
+  <EntityType Name="Cevap">
+    <Key>
+      <PropertyRef Name="Cevapid" />
+    </Key>
+    <Property Name="Cevapid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cevaptrh" Type="DateTime" Precision="3" />
+    <Property Name="Cevapdetay" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Soruid" Type="Int32" />
+    <Property Name="Kid" Type="Int32" />
+    <NavigationProperty Name="Kullanici" Relationship="Self.FK__Cevap__Kid__4BAC3F29" FromRole="Cevap" ToRole="Kullanici" />
+    <NavigationProperty Name="Soru" Relationship="Self.FK__Cevap__Soruid__4AB81AF0" FromRole="Cevap" ToRole="Soru" />
+  </EntityType>
+  <EntityType Name="Duyurular">
+    <Key>
+      <PropertyRef Name="Did" />
+    </Key>
+    <Property Name="Did" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Dbaslik" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Dicerik" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Dtrh" Type="DateTime" Precision="3" />
+    <Property Name="Eid" Type="Int32" />
+    <NavigationProperty Name="Egitmen" Relationship="Self.FK__Duyurular__Eid__30F848ED" FromRole="Duyurular" ToRole="Egitmen" />
+  </EntityType>
+  <EntityType Name="Egitmen">
+    <Key>
+      <PropertyRef Name="Eid" />
+    </Key>
+    <Property Name="Eid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Eadi" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Esoyadi" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Emaili" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Esifre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Hakkimda" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Admini" Relationship="Self.FK__Admini__Eid__5DCAEF64" FromRole="Egitmen" ToRole="Admini" />
+    <NavigationProperty Name="Bildirimler" Relationship="Self.FK__Bildirimler__Eid__440B1D61" FromRole="Egitmen" ToRole="Bildirimler" />
+    <NavigationProperty Name="Duyurular" Relationship="Self.FK__Duyurular__Eid__30F848ED" FromRole="Egitmen" ToRole="Duyurular" />
+    <NavigationProperty Name="Kurs" Relationship="Self.FK__Kurs__Eid__276EDEB3" FromRole="Egitmen" ToRole="Kurs" />
+    <NavigationProperty Name="Materyaller" Relationship="Self.FK__Materyaller__Eid__2E1BDC42" FromRole="Egitmen" ToRole="Materyaller" />
+    <NavigationProperty Name="Mesajlar" Relationship="Self.FK__Mesajlar__Eid__33D4B598" FromRole="Egitmen" ToRole="Mesajlar" />
+    <NavigationProperty Name="Sinavlar" Relationship="Self.FK__Sinavlar__Eid__3D5E1FD2" FromRole="Egitmen" ToRole="Sinavlar" />
+  </EntityType>
+  <EntityType Name="Kategori">
+    <Key>
+      <PropertyRef Name="Ktgrid" />
+    </Key>
+    <Property Name="Ktgrid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ktgradi" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Krsid" Type="Int32" />
+    <NavigationProperty Name="Kurs" Relationship="Self.FK__Kategori__Krsid__2A4B4B5E" FromRole="Kategori" ToRole="Kurs" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="Kid" />
+    </Key>
+    <Property Name="Kid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kadi" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Ksoyadi" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Kmaili" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Ksifre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Hakkimda" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Admini" Relationship="Self.FK__Admini__Kid__5CD6CB2B" FromRole="Kullanici" ToRole="Admini" />
+    <NavigationProperty Name="Bildirimler" Relationship="Self.FK__Bildirimler__Kid__44FF419A" FromRole="Kullanici" ToRole="Bildirimler" />
+    <NavigationProperty Name="Cevap" Relationship="Self.FK__Cevap__Kid__4BAC3F29" FromRole="Kullanici" ToRole="Cevap" />
+    <NavigationProperty Name="KursIstatistik" Relationship="Self.FK__KursIstatis__Kid__37A5467C" FromRole="Kullanici" ToRole="KursIstatistik" />
+    <NavigationProperty Name="Mesajlar" Relationship="Self.FK__Mesajlar__Kid__34C8D9D1" FromRole="Kullanici" ToRole="Mesajlar" />
+    <NavigationProperty Name="Sinavlar" Relationship="Self.FK__Sinavlar__Kid__3E52440B" FromRole="Kullanici" ToRole="Sinavlar" />
+    <NavigationProperty Name="Soru" Relationship="Self.FK__Soru__Kid__47DBAE45" FromRole="Kullanici" ToRole="Soru" />
+  </EntityType>
+  <EntityType Name="Kurs">
+    <Key>
+      <PropertyRef Name="Krsid" />
+    </Key>
+    <Property Name="Krsid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Krsadi" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Krsicerik" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Krstrh" Type="DateTime" Precision="3" />
+    <Property Name="Eid" Type="Int32" />
+    <NavigationProperty Name="Egitmen" Relationship="Self.FK__Kurs__Eid__276EDEB3" FromRole="Kurs" ToRole="Egitmen" />
+    <NavigationProperty Name="Kategori" Relationship="Self.FK__Kategori__Krsid__2A4B4B5E" FromRole="Kurs" ToRole="Kategori" />
+    <NavigationProperty Name="Materyaller" Relationship="Self.FK__Materyall__Krsid__2D27B809" FromRole="Kurs" ToRole="Materyaller" />
+  </EntityType>
+  <EntityType Name="KursIstatistik">
+    <Key>
+      <PropertyRef Name="KIid" />
+    </Key>
+    <Property Name="KIid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BegenmeSayisi" Type="Int32" />
+    <Property Name="İzlenmeSayisi" Type="Int32" />
+    <Property Name="Kid" Type="Int32" />
+    <NavigationProperty Name="Kullanici" Relationship="Self.FK__KursIstatis__Kid__37A5467C" FromRole="KursIstatistik" ToRole="Kullanici" />
+    <NavigationProperty Name="Trendler" Relationship="Self.FK__Trendler__KIid__3A81B327" FromRole="KursIstatistik" ToRole="Trendler" />
+  </EntityType>
+  <EntityType Name="Materyaller">
+    <Key>
+      <PropertyRef Name="Mid" />
+    </Key>
+    <Property Name="Mid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Madi" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Micerik" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Mtrh" Type="DateTime" Precision="3" />
+    <Property Name="Krsid" Type="Int32" />
+    <Property Name="Eid" Type="Int32" />
+    <NavigationProperty Name="Egitmen" Relationship="Self.FK__Materyaller__Eid__2E1BDC42" FromRole="Materyaller" ToRole="Egitmen" />
+    <NavigationProperty Name="Kurs" Relationship="Self.FK__Materyall__Krsid__2D27B809" FromRole="Materyaller" ToRole="Kurs" />
+  </EntityType>
+  <EntityType Name="Mesajlar">
+    <Key>
+      <PropertyRef Name="Msjid" />
+    </Key>
+    <Property Name="Msjid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Msjbaslik" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Msjtrh" Type="DateTime" Precision="3" />
+    <Property Name="Mesaj" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Eid" Type="Int32" />
+    <Property Name="Kid" Type="Int32" />
+    <NavigationProperty Name="Egitmen" Relationship="Self.FK__Mesajlar__Eid__33D4B598" FromRole="Mesajlar" ToRole="Egitmen" />
+    <NavigationProperty Name="Kullanici" Relationship="Self.FK__Mesajlar__Kid__34C8D9D1" FromRole="Mesajlar" ToRole="Kullanici" />
+  </EntityType>
+  <EntityType Name="Sertifikalar">
+    <Key>
+      <PropertyRef Name="Srtid" />
+    </Key>
+    <Property Name="Srtid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Srtadi" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Srticerik" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Snvid" Type="Int32" />
+    <NavigationProperty Name="Sinavlar" Relationship="Self.FK__Sertifika__Snvid__412EB0B6" FromRole="Sertifikalar" ToRole="Sinavlar" />
+  </EntityType>
+  <EntityType Name="Sinavlar">
+    <Key>
+      <PropertyRef Name="Snvid" />
+    </Key>
+    <Property Name="Snvid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Snvadi" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Snvicerik" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="BasariliMi" Type="Boolean" />
+    <Property Name="Eid" Type="Int32" />
+    <Property Name="Kid" Type="Int32" />
+    <NavigationProperty Name="Egitmen" Relationship="Self.FK__Sinavlar__Eid__3D5E1FD2" FromRole="Sinavlar" ToRole="Egitmen" />
+    <NavigationProperty Name="Kullanici" Relationship="Self.FK__Sinavlar__Kid__3E52440B" FromRole="Sinavlar" ToRole="Kullanici" />
+    <NavigationProperty Name="Sertifikalar" Relationship="Self.FK__Sertifika__Snvid__412EB0B6" FromRole="Sinavlar" ToRole="Sertifikalar" />
+  </EntityType>
+  <EntityType Name="Soru">
+    <Key>
+      <PropertyRef Name="Soruid" />
+    </Key>
+    <Property Name="Soruid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sorubaslik" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Sorutrh" Type="DateTime" Precision="3" />
+    <Property Name="Sorudetay" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Kid" Type="Int32" />
+    <NavigationProperty Name="Cevap" Relationship="Self.FK__Cevap__Soruid__4AB81AF0" FromRole="Soru" ToRole="Cevap" />
+    <NavigationProperty Name="Kullanici" Relationship="Self.FK__Soru__Kid__47DBAE45" FromRole="Soru" ToRole="Kullanici" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Trendler">
+    <Key>
+      <PropertyRef Name="Tid" />
+    </Key>
+    <Property Name="Tid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KIid" Type="Int32" />
+    <NavigationProperty Name="KursIstatistik" Relationship="Self.FK__Trendler__KIid__3A81B327" FromRole="Trendler" ToRole="KursIstatistik" />
+  </EntityType>
+  <Association Name="FK__Admini__Eid__5DCAEF64">
+    <End Role="Egitmen" Type="Self.Egitmen" Multiplicity="0..1" />
+    <End Role="Admini" Type="Self.Admini" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Egitmen">
+        <PropertyRef Name="Eid" />
+      </Principal>
+      <Dependent Role="Admini">
+        <PropertyRef Name="Eid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Admini__Kid__5CD6CB2B">
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+    <End Role="Admini" Type="Self.Admini" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="Kid" />
+      </Principal>
+      <Dependent Role="Admini">
+        <PropertyRef Name="Kid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bildirimler__Eid__440B1D61">
+    <End Role="Egitmen" Type="Self.Egitmen" Multiplicity="0..1" />
+    <End Role="Bildirimler" Type="Self.Bildirimler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Egitmen">
+        <PropertyRef Name="Eid" />
+      </Principal>
+      <Dependent Role="Bildirimler">
+        <PropertyRef Name="Eid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bildirimler__Kid__44FF419A">
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+    <End Role="Bildirimler" Type="Self.Bildirimler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="Kid" />
+      </Principal>
+      <Dependent Role="Bildirimler">
+        <PropertyRef Name="Kid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cevap__Kid__4BAC3F29">
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+    <End Role="Cevap" Type="Self.Cevap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="Kid" />
+      </Principal>
+      <Dependent Role="Cevap">
+        <PropertyRef Name="Kid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cevap__Soruid__4AB81AF0">
+    <End Role="Soru" Type="Self.Soru" Multiplicity="0..1" />
+    <End Role="Cevap" Type="Self.Cevap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Soru">
+        <PropertyRef Name="Soruid" />
+      </Principal>
+      <Dependent Role="Cevap">
+        <PropertyRef Name="Soruid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Duyurular__Eid__30F848ED">
+    <End Role="Egitmen" Type="Self.Egitmen" Multiplicity="0..1" />
+    <End Role="Duyurular" Type="Self.Duyurular" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Egitmen">
+        <PropertyRef Name="Eid" />
+      </Principal>
+      <Dependent Role="Duyurular">
+        <PropertyRef Name="Eid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Kurs__Eid__276EDEB3">
+    <End Role="Egitmen" Type="Self.Egitmen" Multiplicity="0..1" />
+    <End Role="Kurs" Type="Self.Kurs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Egitmen">
+        <PropertyRef Name="Eid" />
+      </Principal>
+      <Dependent Role="Kurs">
+        <PropertyRef Name="Eid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Materyaller__Eid__2E1BDC42">
+    <End Role="Egitmen" Type="Self.Egitmen" Multiplicity="0..1" />
+    <End Role="Materyaller" Type="Self.Materyaller" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Egitmen">
+        <PropertyRef Name="Eid" />
+      </Principal>
+      <Dependent Role="Materyaller">
+        <PropertyRef Name="Eid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Mesajlar__Eid__33D4B598">
+    <End Role="Egitmen" Type="Self.Egitmen" Multiplicity="0..1" />
+    <End Role="Mesajlar" Type="Self.Mesajlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Egitmen">
+        <PropertyRef Name="Eid" />
+      </Principal>
+      <Dependent Role="Mesajlar">
+        <PropertyRef Name="Eid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sinavlar__Eid__3D5E1FD2">
+    <End Role="Egitmen" Type="Self.Egitmen" Multiplicity="0..1" />
+    <End Role="Sinavlar" Type="Self.Sinavlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Egitmen">
+        <PropertyRef Name="Eid" />
+      </Principal>
+      <Dependent Role="Sinavlar">
+        <PropertyRef Name="Eid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Kategori__Krsid__2A4B4B5E">
+    <End Role="Kurs" Type="Self.Kurs" Multiplicity="0..1" />
+    <End Role="Kategori" Type="Self.Kategori" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kurs">
+        <PropertyRef Name="Krsid" />
+      </Principal>
+      <Dependent Role="Kategori">
+        <PropertyRef Name="Krsid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__KursIstatis__Kid__37A5467C">
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+    <End Role="KursIstatistik" Type="Self.KursIstatistik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="Kid" />
+      </Principal>
+      <Dependent Role="KursIstatistik">
+        <PropertyRef Name="Kid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Mesajlar__Kid__34C8D9D1">
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+    <End Role="Mesajlar" Type="Self.Mesajlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="Kid" />
+      </Principal>
+      <Dependent Role="Mesajlar">
+        <PropertyRef Name="Kid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sinavlar__Kid__3E52440B">
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+    <End Role="Sinavlar" Type="Self.Sinavlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="Kid" />
+      </Principal>
+      <Dependent Role="Sinavlar">
+        <PropertyRef Name="Kid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Soru__Kid__47DBAE45">
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+    <End Role="Soru" Type="Self.Soru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="Kid" />
+      </Principal>
+      <Dependent Role="Soru">
+        <PropertyRef Name="Kid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Materyall__Krsid__2D27B809">
+    <End Role="Kurs" Type="Self.Kurs" Multiplicity="0..1" />
+    <End Role="Materyaller" Type="Self.Materyaller" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kurs">
+        <PropertyRef Name="Krsid" />
+      </Principal>
+      <Dependent Role="Materyaller">
+        <PropertyRef Name="Krsid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Trendler__KIid__3A81B327">
+    <End Role="KursIstatistik" Type="Self.KursIstatistik" Multiplicity="0..1" />
+    <End Role="Trendler" Type="Self.Trendler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KursIstatistik">
+        <PropertyRef Name="KIid" />
+      </Principal>
+      <Dependent Role="Trendler">
+        <PropertyRef Name="KIid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sertifika__Snvid__412EB0B6">
+    <End Role="Sinavlar" Type="Self.Sinavlar" Multiplicity="0..1" />
+    <End Role="Sertifikalar" Type="Self.Sertifikalar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sinavlar">
+        <PropertyRef Name="Snvid" />
+      </Principal>
+      <Dependent Role="Sertifikalar">
+        <PropertyRef Name="Snvid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dersportalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admini" EntityType="Self.Admini" />
+    <EntitySet Name="Bildirimler" EntityType="Self.Bildirimler" />
+    <EntitySet Name="Cevap" EntityType="Self.Cevap" />
+    <EntitySet Name="Duyurular" EntityType="Self.Duyurular" />
+    <EntitySet Name="Egitmen" EntityType="Self.Egitmen" />
+    <EntitySet Name="Kategori" EntityType="Self.Kategori" />
+    <EntitySet Name="Kullanici" EntityType="Self.Kullanici" />
+    <EntitySet Name="Kurs" EntityType="Self.Kurs" />
+    <EntitySet Name="KursIstatistik" EntityType="Self.KursIstatistik" />
+    <EntitySet Name="Materyaller" EntityType="Self.Materyaller" />
+    <EntitySet Name="Mesajlar" EntityType="Self.Mesajlar" />
+    <EntitySet Name="Sertifikalar" EntityType="Self.Sertifikalar" />
+    <EntitySet Name="Sinavlar" EntityType="Self.Sinavlar" />
+    <EntitySet Name="Soru" EntityType="Self.Soru" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Trendler" EntityType="Self.Trendler" />
+    <AssociationSet Name="FK__Admini__Eid__5DCAEF64" Association="Self.FK__Admini__Eid__5DCAEF64">
+      <End Role="Egitmen" EntitySet="Egitmen" />
+      <End Role="Admini" EntitySet="Admini" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Admini__Kid__5CD6CB2B" Association="Self.FK__Admini__Kid__5CD6CB2B">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="Admini" EntitySet="Admini" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bildirimler__Eid__440B1D61" Association="Self.FK__Bildirimler__Eid__440B1D61">
+      <End Role="Egitmen" EntitySet="Egitmen" />
+      <End Role="Bildirimler" EntitySet="Bildirimler" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bildirimler__Kid__44FF419A" Association="Self.FK__Bildirimler__Kid__44FF419A">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="Bildirimler" EntitySet="Bildirimler" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cevap__Kid__4BAC3F29" Association="Self.FK__Cevap__Kid__4BAC3F29">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="Cevap" EntitySet="Cevap" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cevap__Soruid__4AB81AF0" Association="Self.FK__Cevap__Soruid__4AB81AF0">
+      <End Role="Soru" EntitySet="Soru" />
+      <End Role="Cevap" EntitySet="Cevap" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Duyurular__Eid__30F848ED" Association="Self.FK__Duyurular__Eid__30F848ED">
+      <End Role="Egitmen" EntitySet="Egitmen" />
+      <End Role="Duyurular" EntitySet="Duyurular" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Kurs__Eid__276EDEB3" Association="Self.FK__Kurs__Eid__276EDEB3">
+      <End Role="Egitmen" EntitySet="Egitmen" />
+      <End Role="Kurs" EntitySet="Kurs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Materyaller__Eid__2E1BDC42" Association="Self.FK__Materyaller__Eid__2E1BDC42">
+      <End Role="Egitmen" EntitySet="Egitmen" />
+      <End Role="Materyaller" EntitySet="Materyaller" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Mesajlar__Eid__33D4B598" Association="Self.FK__Mesajlar__Eid__33D4B598">
+      <End Role="Egitmen" EntitySet="Egitmen" />
+      <End Role="Mesajlar" EntitySet="Mesajlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sinavlar__Eid__3D5E1FD2" Association="Self.FK__Sinavlar__Eid__3D5E1FD2">
+      <End Role="Egitmen" EntitySet="Egitmen" />
+      <End Role="Sinavlar" EntitySet="Sinavlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Kategori__Krsid__2A4B4B5E" Association="Self.FK__Kategori__Krsid__2A4B4B5E">
+      <End Role="Kurs" EntitySet="Kurs" />
+      <End Role="Kategori" EntitySet="Kategori" />
+    </AssociationSet>
+    <AssociationSet Name="FK__KursIstatis__Kid__37A5467C" Association="Self.FK__KursIstatis__Kid__37A5467C">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="KursIstatistik" EntitySet="KursIstatistik" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Mesajlar__Kid__34C8D9D1" Association="Self.FK__Mesajlar__Kid__34C8D9D1">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="Mesajlar" EntitySet="Mesajlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sinavlar__Kid__3E52440B" Association="Self.FK__Sinavlar__Kid__3E52440B">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="Sinavlar" EntitySet="Sinavlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Soru__Kid__47DBAE45" Association="Self.FK__Soru__Kid__47DBAE45">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="Soru" EntitySet="Soru" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Materyall__Krsid__2D27B809" Association="Self.FK__Materyall__Krsid__2D27B809">
+      <End Role="Kurs" EntitySet="Kurs" />
+      <End Role="Materyaller" EntitySet="Materyaller" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Trendler__KIid__3A81B327" Association="Self.FK__Trendler__KIid__3A81B327">
+      <End Role="KursIstatistik" EntitySet="KursIstatistik" />
+      <End Role="Trendler" EntitySet="Trendler" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sertifika__Snvid__412EB0B6" Association="Self.FK__Sertifika__Snvid__412EB0B6">
+      <End Role="Sinavlar" EntitySet="Sinavlar" />
+      <End Role="Sertifikalar" EntitySet="Sertifikalar" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

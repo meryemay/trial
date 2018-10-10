@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dersportalModelStoreContainer" CdmEntityContainer="dersportalEntities">
+    <EntitySetMapping Name="Admini">
+      <EntityTypeMapping TypeName="dersportalModel.Admini">
+        <MappingFragment StoreEntitySet="Admini">
+          <ScalarProperty Name="Aid" ColumnName="Aid" />
+          <ScalarProperty Name="Aadi" ColumnName="Aadi" />
+          <ScalarProperty Name="Asoyadi" ColumnName="Asoyadi" />
+          <ScalarProperty Name="Amaili" ColumnName="Amaili" />
+          <ScalarProperty Name="Asifre" ColumnName="Asifre" />
+          <ScalarProperty Name="Aonay" ColumnName="Aonay" />
+          <ScalarProperty Name="Kid" ColumnName="Kid" />
+          <ScalarProperty Name="Eid" ColumnName="Eid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bildirimler">
+      <EntityTypeMapping TypeName="dersportalModel.Bildirimler">
+        <MappingFragment StoreEntitySet="Bildirimler">
+          <ScalarProperty Name="Bid" ColumnName="Bid" />
+          <ScalarProperty Name="Badi" ColumnName="Badi" />
+          <ScalarProperty Name="Bicerik" ColumnName="Bicerik" />
+          <ScalarProperty Name="Eid" ColumnName="Eid" />
+          <ScalarProperty Name="Kid" ColumnName="Kid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cevap">
+      <EntityTypeMapping TypeName="dersportalModel.Cevap">
+        <MappingFragment StoreEntitySet="Cevap">
+          <ScalarProperty Name="Cevapid" ColumnName="Cevapid" />
+          <ScalarProperty Name="Cevaptrh" ColumnName="Cevaptrh" />
+          <ScalarProperty Name="Cevapdetay" ColumnName="Cevapdetay" />
+          <ScalarProperty Name="Soruid" ColumnName="Soruid" />
+          <ScalarProperty Name="Kid" ColumnName="Kid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Duyurular">
+      <EntityTypeMapping TypeName="dersportalModel.Duyurular">
+        <MappingFragment StoreEntitySet="Duyurular">
+          <ScalarProperty Name="Did" ColumnName="Did" />
+          <ScalarProperty Name="Dbaslik" ColumnName="Dbaslik" />
+          <ScalarProperty Name="Dicerik" ColumnName="Dicerik" />
+          <ScalarProperty Name="Dtrh" ColumnName="Dtrh" />
+          <ScalarProperty Name="Eid" ColumnName="Eid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Egitmen">
+      <EntityTypeMapping TypeName="dersportalModel.Egitmen">
+        <MappingFragment StoreEntitySet="Egitmen">
+          <ScalarProperty Name="Eid" ColumnName="Eid" />
+          <ScalarProperty Name="Eadi" ColumnName="Eadi" />
+          <ScalarProperty Name="Esoyadi" ColumnName="Esoyadi" />
+          <ScalarProperty Name="Emaili" ColumnName="Emaili" />
+          <ScalarProperty Name="Esifre" ColumnName="Esifre" />
+          <ScalarProperty Name="Hakkimda" ColumnName="Hakkimda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kategori">
+      <EntityTypeMapping TypeName="dersportalModel.Kategori">
+        <MappingFragment StoreEntitySet="Kategori">
+          <ScalarProperty Name="Ktgrid" ColumnName="Ktgrid" />
+          <ScalarProperty Name="Ktgradi" ColumnName="Ktgradi" />
+          <ScalarProperty Name="Krsid" ColumnName="Krsid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanici">
+      <EntityTypeMapping TypeName="dersportalModel.Kullanici">
+        <MappingFragment StoreEntitySet="Kullanici">
+          <ScalarProperty Name="Kid" ColumnName="Kid" />
+          <ScalarProperty Name="Kadi" ColumnName="Kadi" />
+          <ScalarProperty Name="Ksoyadi" ColumnName="Ksoyadi" />
+          <ScalarProperty Name="Kmaili" ColumnName="Kmaili" />
+          <ScalarProperty Name="Ksifre" ColumnName="Ksifre" />
+          <ScalarProperty Name="Hakkimda" ColumnName="Hakkimda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kurs">
+      <EntityTypeMapping TypeName="dersportalModel.Kurs">
+        <MappingFragment StoreEntitySet="Kurs">
+          <ScalarProperty Name="Krsid" ColumnName="Krsid" />
+          <ScalarProperty Name="Krsadi" ColumnName="Krsadi" />
+          <ScalarProperty Name="Krsicerik" ColumnName="Krsicerik" />
+          <ScalarProperty Name="Krstrh" ColumnName="Krstrh" />
+          <ScalarProperty Name="Eid" ColumnName="Eid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KursIstatistik">
+      <EntityTypeMapping TypeName="dersportalModel.KursIstatistik">
+        <MappingFragment StoreEntitySet="KursIstatistik">
+          <ScalarProperty Name="KIid" ColumnName="KIid" />
+          <ScalarProperty Name="BegenmeSayisi" ColumnName="BegenmeSayisi" />
+          <ScalarProperty Name="İzlenmeSayisi" ColumnName="İzlenmeSayisi" />
+          <ScalarProperty Name="Kid" ColumnName="Kid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Materyaller">
+      <EntityTypeMapping TypeName="dersportalModel.Materyaller">
+        <MappingFragment StoreEntitySet="Materyaller">
+          <ScalarProperty Name="Mid" ColumnName="Mid" />
+          <ScalarProperty Name="Madi" ColumnName="Madi" />
+          <ScalarProperty Name="Micerik" ColumnName="Micerik" />
+          <ScalarProperty Name="Mtrh" ColumnName="Mtrh" />
+          <ScalarProperty Name="Krsid" ColumnName="Krsid" />
+          <ScalarProperty Name="Eid" ColumnName="Eid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mesajlar">
+      <EntityTypeMapping TypeName="dersportalModel.Mesajlar">
+        <MappingFragment StoreEntitySet="Mesajlar">
+          <ScalarProperty Name="Msjid" ColumnName="Msjid" />
+          <ScalarProperty Name="Msjbaslik" ColumnName="Msjbaslik" />
+          <ScalarProperty Name="Msjtrh" ColumnName="Msjtrh" />
+          <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+          <ScalarProperty Name="Eid" ColumnName="Eid" />
+          <ScalarProperty Name="Kid" ColumnName="Kid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sertifikalar">
+      <EntityTypeMapping TypeName="dersportalModel.Sertifikalar">
+        <MappingFragment StoreEntitySet="Sertifikalar">
+          <ScalarProperty Name="Srtid" ColumnName="Srtid" />
+          <ScalarProperty Name="Srtadi" ColumnName="Srtadi" />
+          <ScalarProperty Name="Srticerik" ColumnName="Srticerik" />
+          <ScalarProperty Name="Snvid" ColumnName="Snvid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sinavlar">
+      <EntityTypeMapping TypeName="dersportalModel.Sinavlar">
+        <MappingFragment StoreEntitySet="Sinavlar">
+          <ScalarProperty Name="Snvid" ColumnName="Snvid" />
+          <ScalarProperty Name="Snvadi" ColumnName="Snvadi" />
+          <ScalarProperty Name="Snvicerik" ColumnName="Snvicerik" />
+          <ScalarProperty Name="BasariliMi" ColumnName="BasariliMi" />
+          <ScalarProperty Name="Eid" ColumnName="Eid" />
+          <ScalarProperty Name="Kid" ColumnName="Kid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Soru">
+      <EntityTypeMapping TypeName="dersportalModel.Soru">
+        <MappingFragment StoreEntitySet="Soru">
+          <ScalarProperty Name="Soruid" ColumnName="Soruid" />
+          <ScalarProperty Name="Sorubaslik" ColumnName="Sorubaslik" />
+          <ScalarProperty Name="Sorutrh" ColumnName="Sorutrh" />
+          <ScalarProperty Name="Sorudetay" ColumnName="Sorudetay" />
+          <ScalarProperty Name="Kid" ColumnName="Kid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="dersportalModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trendler">
+      <EntityTypeMapping TypeName="dersportalModel.Trendler">
+        <MappingFragment StoreEntitySet="Trendler">
+          <ScalarProperty Name="Tid" ColumnName="Tid" />
+          <ScalarProperty Name="KIid" ColumnName="KIid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

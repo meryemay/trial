@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bcf2d6cd5ddb4aee841918aa6da42949" Name="Diagram1">
+        <EntityTypeShape EntityType="dersportalModel.Admini" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dersportalModel.Bildirimler" Width="1.5" PointX="6" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dersportalModel.Cevap" Width="1.5" PointX="5.25" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dersportalModel.Duyurular" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dersportalModel.Egitmen" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dersportalModel.Kategori" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dersportalModel.Kullanici" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dersportalModel.Kurs" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dersportalModel.KursIstatistik" Width="1.5" PointX="3" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dersportalModel.Materyaller" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dersportalModel.Mesajlar" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dersportalModel.Sertifikalar" Width="1.5" PointX="5.25" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dersportalModel.Sinavlar" Width="1.5" PointX="3" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dersportalModel.Soru" Width="1.5" PointX="3" PointY="30.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dersportalModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dersportalModel.Trendler" Width="1.5" PointX="5.25" PointY="21.125" IsExpanded="true" />
+        <AssociationConnector Association="dersportalModel.FK__Admini__Eid__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="dersportalModel.FK__Admini__Kid__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="dersportalModel.FK__Bildirimler__Eid__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="dersportalModel.FK__Bildirimler__Kid__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="dersportalModel.FK__Cevap__Kid__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="dersportalModel.FK__Cevap__Soruid__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="dersportalModel.FK__Duyurular__Eid__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="dersportalModel.FK__Kurs__Eid__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="dersportalModel.FK__Materyaller__Eid__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="dersportalModel.FK__Mesajlar__Eid__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="dersportalModel.FK__Sinavlar__Eid__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="dersportalModel.FK__Kategori__Krsid__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="dersportalModel.FK__KursIstatis__Kid__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="dersportalModel.FK__Mesajlar__Kid__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="dersportalModel.FK__Sinavlar__Kid__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="dersportalModel.FK__Soru__Kid__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="dersportalModel.FK__Materyall__Krsid__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="dersportalModel.FK__Trendler__KIid__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="dersportalModel.FK__Sertifika__Snvid__412EB0B6" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
